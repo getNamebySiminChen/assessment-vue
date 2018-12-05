@@ -1,0 +1,111 @@
+[{
+	"ModuleId": "d7a2032e-5a8f-48ef-ab82-1b5399afa5e77",
+	"ParentId": "0",
+	"EnCode": "99",
+	"FullName": "党委书记/总经理",
+	"Icon": "menu-icon-secretaryAndManagerAssessment",
+	"Index": "1",
+	"children": [{
+			"ModuleId": "d9818963-0a11-4999-b06a-8ad7e1a732543",
+			"ParentId": "d7a2032e-5a8f-48ef-ab82-1b5399afa5e77",
+			"EnCode": "9902",
+			"FullName": "考核评价",
+			"path": "/assessmentEvaluation",
+			"Index": "1-1"
+	},{
+			"ModuleId": "9d01c6df-7a4b-436e-a089-a71daff453543",
+			"ParentId": "d7a2032e-5a8f-48ef-ab82-1b5399afa5e77",
+			"EnCode": "9903",
+			"FullName": "考核统计",
+			"path": "/assessmentStatic",
+			"Index": "1-2"
+	}]
+},{
+	"ModuleId": "d7a2032e-5a8f-48ef-ab82-1b5399afa3564",
+	"ParentId": "0",
+	"EnCode": "99",
+	"FullName": "部门负责人",
+	"Icon": "menu-icon-deptHeadAssessment",
+	"Index": "2",
+	"children": [{
+			"ModuleId": "d9818963-0a11-4999-b06a-8ad7e1a745245",
+			"ParentId": "d7a2032e-5a8f-48ef-ab82-1b5399afa3564",
+			"EnCode": "9902",
+			"FullName": "任务分配",
+			"path": "/taskAssign",
+			"Index": "2-1"
+	}]
+},{
+	"ModuleId": "d7a2032e-5a8f-48ef-ab82-1b5399afa3986",
+	"ParentId": "0",
+	"EnCode": "99",
+	"FullName": "人资专员",
+	"Icon": "menu-icon-HRAssessment",
+	"Index": "3",
+	"children": [{
+			"ModuleId": "d9818963-0a11-4999-b06a-8ad7e1a780d8",
+			"ParentId": "d7a2032e-5a8f-48ef-ab82-1b5399afa3986",
+			"EnCode": "9902",
+			"FullName": "考核计划",
+			"path": "/assessmentPlan",
+			"Index": "3-1"
+	},{
+			"ModuleId": "9d01c6df-7a4b-436e-a089-a71daffd71fc",
+			"ParentId": "d7a2032e-5a8f-48ef-ab82-1b5399afa3986",
+			"EnCode": "9903",
+			"FullName": "考核处理",
+			"path": "/assessmentProcess",
+			"Index": "3-2"
+	}]
+},{
+		"ModuleId": "0101",
+		"ParentId": "0",
+		"EnCode": "030102",
+		"FullName": "试用期员工",
+		"Icon": "menu-icon-selfAssessment",
+		"Index": "4",
+		"children": [{
+				"ModuleId": "9d01c6df-7a4b-436e-a089-a71daf3245641",
+				"ParentId": "0101",
+				"EnCode": "9903",
+				"FullName": "自我评价",
+				"path": "/selfEvaluation",
+				"Index": "4-1"
+		}]
+},{
+	"ModuleId": "04",
+	"ParentId": "0",
+	"EnCode": "99",
+	"FullName": "考核设置",
+	"Icon": "menu-icon-assessmentSettings",
+	"Index": "5",
+	"children": [{
+			"ModuleId": "d9818963-0a11-4999-b06a-8ad7e1a453543543",
+			"ParentId": "04",
+			"EnCode": "9902",
+			"FullName": "考核设置",
+			"path": "/assessmentSetting",
+			"Index": "5-1"
+	},{
+			"ModuleId": "9d01c6df-7a4b-436e-a089-a71daffd745354",
+			"ParentId": "04",
+			"EnCode": "9903",
+			"FullName": "考核内容",
+			"path": "/assessmentContent",
+			"Index": "5-2"
+	},{
+			"ModuleId": "9d01c6df-7a4b-436e-a089-a71daf32453543",
+			"ParentId": "04",
+			"EnCode": "9903",
+			"FullName": "考核人员设置",
+			"path": "/examinerSetting",
+			"Index": "5-3"
+	},{
+			"ModuleId": "9d01c6df-7a4b-436e-a089-a71daf32454354",
+			"ParentId": "04",
+			"EnCode": "9903",
+			"FullName": "分管部门设置",
+			"path": "/deptSetting",
+			"Index": "5-4"
+	}]
+}]

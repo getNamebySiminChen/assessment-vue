@@ -1,0 +1,40 @@
+$main-color: #0055B3;
+$grey-color: #EAEBF4;
+$border: 1px solid #e0e5f1;
+
+@mixin bgBlue {
+  background-color: $main-color;
+  color: #fff;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+#app{
+    background-color: #FAFBFD;
+    height: 100%;
+    width: 100%;
+    .app-wrap{
+      height: 100%;
+      .main{
+        height: calc(100% - 60px);
+        .side-nav{
+          background-color:$grey-color;
+        }
+      }
+    }
+}
+.clearfix{
+  clear: both;
+}
+
+.bg-blue{
+  @include bgBlue;
+}
