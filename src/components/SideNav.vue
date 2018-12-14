@@ -5,9 +5,9 @@
       @close="handleClose">
       <el-submenu v-for="menu in menuData" v-bind:index="menu.Index" :key="menu.Index">
           <template slot="title">
-            <i v-bind:class="menu.Icon"></i>
-            <span>{{menu.FullName}}</span>
-            <i class="icon-dropDown"></i>
+              <i v-bind:class="menu.Icon"></i>
+              <span>{{menu.FullName}}</span>
+              <i class="icon-dropDown"></i>
           </template>
           <template v-for="item in menu.children">
               <el-menu-item v-bind:index="item.Index" :key="item.Index" v-on:click="ativateTab([item.Index,item.path,item.FullName])">
@@ -87,6 +87,11 @@ export default {
               i.menu-icon-HRAssessment{
                 @include titleIcon;
                 background: url('../assets/menu-icon-HRAssessment.png') center no-repeat;
+                background-size: contain;
+              }
+              i.menu-icon-selfAssessment{
+                @include titleIcon;
+                background: url('../assets/menu-icon-selfAssessment.png') center no-repeat;
                 background-size: contain;
               }
               i.menu-icon-assessmentSettings{

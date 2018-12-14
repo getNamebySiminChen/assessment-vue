@@ -6,10 +6,12 @@
       <nav class="page-tabs menuTabs">
           <div class="page-tabs-content">
             <template v-for="(tab,index) in tabs">
-              <router-link class="menuTab" active-class="active" v-bind:to="tab.path" :key="tab.index">
-                  <i class="icon icon-remove" @click="removeCurrTab(index)"></i>
-                  <span>{{ tab.FullName }}</span>
-              </router-link>
+              <div class="tab-block pull-left" :class="tab.active ? 'active' : ''">
+                <router-link class="menuTab" active-class="active" v-bind:to="tab.path" :key="tab.index">
+                    <span>{{ tab.FullName }}</span>
+                </router-link>
+                <i class="icon icon-remove" @click="removeCurrTab(index)"></i>
+            </div>
             </template>
           </div>
       </nav>
@@ -41,16 +43,13 @@ export default {
       removeCurrTab: function(index){
         this.removeTab(index);
         if (this.tabs != 0) {
-            this.$router.go(-1);
+            this.$router.push(this.tabs[this.tabs.length - 1].path);
         }else {
             this.$router.push('/');
-            this.$router.go(-1);
         }
-
       },
       refreshPage: function(){
-        this.$router.go(-1);
-        this.$router.go(1);
+          this.$router.go(1);
       }
   }
 }
@@ -129,21 +128,23 @@ export default {
         background-color: #f2f4fa;
         .page-tabs-content{
           float:left;
+          .tab-block{
+            border-right: $border;
+          }
         }
         a{
           display:block;
           float:left;
-          border-right: $border;
-          padding:0 16px;
+          padding: 0 16px 0 16px;
           text-decoration:none;
           color:#575757;
           font-size: 14px;
-          &:first-child{
-            padding-right:15px;
-          }
+          // &:first-child{
+          //   padding-right:15px;
+          // }
           &.active{
+            padding: 0 8px 0 16px;
             color: #0054b3;
-            border-right: $border;
             background-color: #fff;
             i{
               color: #007aff;
@@ -176,7 +177,7 @@ export default {
           }
       }
       .menuTab{
-        .icon{
+        &~.icon{
             display: inline-block;
             width: 21px;
             height: 21px;
@@ -185,14 +186,17 @@ export default {
               display: none;
             }
         }
-        &.active{
-          .icon.icon-remove{
-              display:inline-block;
-              width:12px;
-              height:12px;
-              background: url(../assets/icon-remove.png)no-repeat center;
-              background-size: contain;
-            }
+        &~.icon.icon-remove{
+          display: none;
+          width: 28px;
+          height: 38px;
+          padding-right: 16px;
+          background: url(../assets/icon-remove.png)no-repeat left center;
+          background-size: 12px,12px;
+        }
+        &.active~.icon.icon-remove{
+          display: inline-block;
+          background-color: #fff;
         }
       }
 

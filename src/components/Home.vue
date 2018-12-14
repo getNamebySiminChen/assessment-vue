@@ -1,15 +1,15 @@
 <template>
-  <div class="hello">
-
+  <div class="">
+      <h1>{{ msg }}</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Home',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: '您好'
     }
   }
 }
@@ -17,5 +17,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-  
+
 </style>
