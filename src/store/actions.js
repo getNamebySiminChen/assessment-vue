@@ -11,7 +11,8 @@ export const ativateTab = (context,tab) =>{
   let param = {
       index: tab[0],
       path: tab[1],
-      FullName: tab[2]
+      FullName: tab[2],
+      active: true
   }
   context.commit('toAddTab',param);
 }

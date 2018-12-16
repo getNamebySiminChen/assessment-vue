@@ -6,12 +6,12 @@
       <nav class="page-tabs menuTabs">
           <div class="page-tabs-content">
             <template v-for="(tab,index) in tabs">
-              <div class="tab-block pull-left" :class="tab.active ? 'active' : ''">
+              <div class="tab-block pull-left" v-on:click="ativateTab([tab.index,tab.path,tab.FullName])">
                 <router-link class="menuTab" active-class="active" v-bind:to="tab.path" :key="tab.index">
                     <span>{{ tab.FullName }}</span>
                 </router-link>
-                <i class="icon icon-remove" @click="removeCurrTab(index)"></i>
-            </div>
+                <i class="icon icon-remove" @click.stop="removeCurrTab(tab.index)"></i>
+              </div>
             </template>
           </div>
       </nav>
@@ -23,7 +23,7 @@
               <i class="icon icon-refresh" title="刷新当前"></i>
           </button>
       </div>
-      <button class="roll-nav roll-right tabCloseCurrent"><i class="icon icon-close" title="关闭当前"></i></button>
+      <button class="roll-nav roll-right tabCloseCurrent"><i class="icon icon-close" title="关闭当前" @click="removeCurrTab(null)"></i></button>
   </div>
 </template>
 
@@ -36,11 +36,23 @@ export default {
       'tabs'
     ])
   },
+  data(){
+    return {
+      activeTab: null
+    }
+  },
   methods: {
       ...mapActions([
-        "removeTab"
+        "removeTab",
+        'ativateTab'
       ]),
       removeCurrTab: function(index){
+        if (index == null) {
+          let activeTab = this.tabs.filter(item => item.active == true );
+          index = activeTab[0].index
+          console.log(this.tabs);
+        }
+        console.log(index);
         this.removeTab(index);
         if (this.tabs != 0) {
             this.$router.push(this.tabs[this.tabs.length - 1].path);
